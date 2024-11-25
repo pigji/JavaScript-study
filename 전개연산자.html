@@ -25,16 +25,22 @@
     }
     
     let d = ["one", "two", "three"];
-    print(d)
+    print(d);
+    print(...d);//함수의 인자로 전달하는 배열을 전개연산자를 이용해서 보내면 배열을 분해해서 함수로 전달한다
 
     //객체 분해
     let person1 = {name: "홍길동", age: 16};
-    let person2= {...person1, email: "abcd@email.com"};
+    let person2 = {...person1, email:"email@email.com"}
     console.log(person1);
     console.log(person2);
-    person2.name = "임꺽정";
+    person2.name = "임꺽정"
+    console.log(person1);
     console.log(person2);
-    console.log(person2);
+
+    let person3 = {...person1};
+    person3.name = "김철수"
+    console.log(person3)
+    console.log(person1)
   </script>
 
 </body>
