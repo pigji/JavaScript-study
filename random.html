@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random함수</title>
+
+  <style>
+    img{
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <img src="img/p1.jpg" alt="">
+  <img src="img/p2.jpg" alt="">
+  <img src="img/p3.jpg" alt="">
+
+  <script>
+    //random - 난수 메소드
+    console.log(Math.random())  //0~1사이의 랜덤한 숫자를 생성
+
+    for(let i = 0; i < 20; i++){  //20번 반복적으로 수행되는 코드
+      let a = Math.floor(Math.random()*6) //0~5사이의 숫자라 랜덤으로 출력
+      console.log(a)
+    }
+
+    //console.log(Math.random())
+    let MAX = 5, MIN = 2;
+
+    for(let i= 0; i < 20; i++){ //20번 반복적으로 수행되는 코드
+      //MAX값과 MIN값 사이의 임의의 숫자를 구하는공식
+      let a = Math.floor(Math.random()*(MAX-MIN+1) + MIN)
+      console.log(a)
+    }
+
+    //이미지 랜덤 선정
+    let imgs = document.querySelectorAll("img")
+
+    //imgs배열에 있는 이미지요소를 순회하면서 코드를 실행
+    imgs.forEach(img => img.addEventListener('click', () => { //모든 이미지요소에 클릭이벤트를 발생
+      //0~20 사이의 숫자를 하나 선택하여 소수점 이하 값을 올림처리하고 정부 반환 후 변수 n에 저장
+      let n = Math.ceil(Math.random() * 20);
+      //클릭이벤트가 발생한 이미지 요소의 src속성을 생성한 랜덤 값으로 적용하여 변경
+      img.src = `img/p${n}.jpg`
+      console.log(n);
+    }))
+  </script>
+</body>
+</html>

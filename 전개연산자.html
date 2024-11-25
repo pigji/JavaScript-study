@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>전개 연산자</title>
+</head>
+<body>
+  <script>
+    //배열 분해
+    let a = [1, 2]
+    let b = [3, 4]
+    let c = [5, 6]
+
+    let m = [a, b, c]
+    console.log(m);
+
+    //배열안의 배열요소들을 분해해서 새로운 배열로 그룹 지을때 사용
+    let n = [...a, ...b, ...c]
+    console.log(n)
+
+    function print(...params){  //인자로 전달된 값을 새로운 배열로 복제해서 받아오겠다는 의미
+      console.log(params.length)  //1출력
+      console.log(params) //배열 출력
+    }
+    
+    let d = ["one", "two", "three"];
+    print(d)
+
+    //객체 분해
+    let person1 = {name: "홍길동", age: 16};
+    let person2= {...person1, email: "abcd@email.com"};
+    console.log(person1);
+    console.log(person2);
+    person2.name = "임꺽정";
+    console.log(person2);
+    console.log(person2);
+  </script>
+
+</body>
+</html>

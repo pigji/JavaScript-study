@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>형변환</title>
+</head>
+<body>
+  <script>
+    //string타입을 number타이븡로 변환하기 위한 함수
+    //1.parseInt : 정수만 숫자로 반환
+    //2.parseFloat : 소수점까지 숫자로 반환
+    //3.Number : 숫자로 반환하는데 문자가 있을 경우 NaN을 반환
+
+    let s = "123.456";  //숫자를 ""(따옴표)로 감싸주었기 때문에 문자로 인식
+    console.log(parseInt(s));  //123 출력
+    console.log(s); //123.456출력
+
+    console.log(parseFloat(s)); //123.456출력
+    console.log(Number(s)); //123.456출력
+
+    //형변환 number -> String
+    //1.toString  ,2.String   = 둘다 숫자를 문자로 변경해준다.
+
+    let b = 123.456;
+
+    console.log(typeof b.toString());   //String출력
+    console.log(typeof String(b));  //String출력
+
+    //round(반올림), floor(내림), ceil(올림)
+    console.log(10/3);  //3.333333... 출력
+    console.log(Math.round(10/3));  //3출력
+    console.log(10/4);  //2.5출력
+    console.log(Math.round(10/4));  //3출력
+    console.log(Math.floor(10/4));  //2출력
+    console.log(Math.ceil(10/4));  //3출력
+
+  </script>
+</body>
+</html>
