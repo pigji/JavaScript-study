@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>예외발생</title>
+</head>
+<body>
+  <h1>예외 발생</h1>
+  <button id="throwExBtn">예외 발생!</button>
+  <p id="text"></p>
+
+  <script>
+    //버튼요소 선택
+    const btn = document.getElementById("throwExBtn");
+    
+    //버튼 클릭이벤트 추가
+    btn.addEventListener("click", () => {
+      try{
+        //Error객체를 사용하여 명시적으로 오류를 발생(강제적 오류 발생)
+        throw new Error("직접 발생시킨 오류입니다!");
+      } 
+      catch(err){ //발생된 오류를 매개변수 err로 접근할 수 있음
+        //#text에 오류의 타입을 저장
+        document.getElementById("text").innerHTML = err.name + "<br>";
+        //오류 메시지를 추가
+        document.getElementById("text").innerHTML += err.message;
+      } 
+    })
+  </script>
+</body>
+</html>
