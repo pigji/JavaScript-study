@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>배열메소드2</title>
+</head>
+<body>
+  <script>
+    //concat메소드 = 두배열을 결합한 새배열을 생성하여 리턴
+    let a1 = [1,2];
+    let a2 = [3,4];
+    let a3 = a1.concat(a2);
+    let a4 = [...a1, ...a2];
+    console.log(a3); //[1,2,3,4]
+    console.log(a4); //[1,2,3,4]
+
+    //sort = 배열요소를 정렬해주는 메서드
+    a = [3,1,6,2,4,8,10,5,11,7,9];
+    a.sort(compareNumber);
+    console.log(a)
+    function compareNumber(i, j){
+      return i - j; //첫번째 인자 - 두번째 인자 = 오름차순
+      //두번째 인자 - 첫번째 인자 = 내림차순
+    }
+
+    
+  </script>
+</body>
+</html>
